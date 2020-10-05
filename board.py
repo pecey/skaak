@@ -42,7 +42,6 @@ class Chessboard(object):
             else:
                 file_index += 1
 
-            square_index
     def get_rank_squares(self, rank: int) -> t.List[str]:
         squares: t.List[str] = []
         for square in self.board_index:
@@ -85,7 +84,7 @@ class Chessboard(object):
             if int(self.board_index[str(square)]["index"]) == index:  # type: ignore
                 return str(square)
         else:
-            raise IndexError("index not found")  # mypy complaining about it not returning in all cases.  # mypy complaining about it not returning in all cases.
+            raise IndexError("index not found")  # mypy complaining about it not returning in all cases.
 
     def def_piece_colors(self) -> None:
         for square in self.board_index:
@@ -148,7 +147,8 @@ class Chessboard(object):
                     pass
                 else:
                     clean_moves.append(str(move))
-        return clean_m
+        return clean_moves
+
     def calc_board_position_pos_moves(self, fen: str) -> t.List[t.Dict[str, str]]:
         moves: t.List[t.Dict[str, str]] = []
         self.position(fen)
@@ -681,4 +681,4 @@ class Chessboard(object):
                 else:
                     clean_fen += char
 
-        return clean_fengit
+        return clean_fen
